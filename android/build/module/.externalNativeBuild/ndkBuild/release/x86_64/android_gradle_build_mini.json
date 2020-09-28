@@ -1,0 +1,16 @@
+{
+  "buildFiles": [
+    "/Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/jni/Android.mk"
+  ],
+  "cleanCommands": [
+    "/Applications/adt-bundle-mac/sdk/ndk-bundle/ndk-build NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003d/Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/jni/Android.mk APP_ABI\u003dx86_64 NDK_ALL_ABIS\u003dx86_64 NDK_DEBUG\u003d0 APP_PLATFORM\u003dandroid-19 NDK_OUT\u003d/Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/build/intermediates/ndkBuild/release/obj NDK_LIBS_OUT\u003d/Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/build/intermediates/ndkBuild/release/lib APP_CPPFLAGS+\u003d-std\u003dc++11 APP_STL:\u003dc++_shared clean"
+  ],
+  "libraries": {
+    "net.devloops.mastercard.gateway-release-x86_64": {
+      "artifactName": "net.devloops.mastercard.gateway",
+      "buildCommand": "/Applications/adt-bundle-mac/sdk/ndk-bundle/ndk-build NDK_PROJECT_PATH\u003dnull APP_BUILD_SCRIPT\u003d/Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/jni/Android.mk APP_ABI\u003dx86_64 NDK_ALL_ABIS\u003dx86_64 NDK_DEBUG\u003d0 APP_PLATFORM\u003dandroid-19 NDK_OUT\u003d/Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/build/intermediates/ndkBuild/release/obj NDK_LIBS_OUT\u003d/Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/build/intermediates/ndkBuild/release/lib APP_CPPFLAGS+\u003d-std\u003dc++11 APP_STL:\u003dc++_shared -j8 /Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/build/intermediates/ndkBuild/release/obj/local/x86_64/libnet.devloops.mastercard.gateway.so",
+      "abi": "x86_64",
+      "output": "/Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/build/intermediates/ndkBuild/release/obj/local/x86_64/libnet.devloops.mastercard.gateway.so"
+    }
+  }
+}

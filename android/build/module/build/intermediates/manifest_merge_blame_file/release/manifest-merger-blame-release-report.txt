@@ -1,0 +1,36 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    xmlns:tools="http://schemas.android.com/tools"
+4    package="net.devloops.mastercard.gateway"
+5    android:versionName="1.0.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="19"
+8-->/Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="29" />
+9-->/Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml
+10
+11    <application
+11-->/Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml:3:13-7:27
+12        android:allowBackup="true"
+12-->/Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml:3:26-52
+13        android:supportsRtl="true" >
+13-->/Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml:3:53-79
+14
+15        <!-- Enables the Google Pay API -->
+16        <meta-data
+16-->/Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml:5:17-107
+17            android:name="com.google.android.gms.wallet.api.enabled"
+17-->/Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml:5:28-84
+18            android:value="true" />
+18-->/Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml:5:85-105
+19
+20        <activity
+20-->/Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml:6:17-117
+21            android:name="net.devloops.mastercard.gateway.TiMastercardGateway3DSecureActivity"
+21-->/Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml:6:27-78
+22            android:screenOrientation="portrait" />
+22-->/Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml:6:79-115
+23    </application>
+24
+25</manifest>

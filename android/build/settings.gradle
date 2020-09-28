@@ -1,0 +1,2 @@
+rootProject.name = 'net.devloops.mastercard.gateway'
+include ':module'

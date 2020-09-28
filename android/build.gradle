@@ -1,0 +1,3 @@
+dependencies {
+    implementation 'com.mastercard.gateway:gateway-android:1.1.4'
+}

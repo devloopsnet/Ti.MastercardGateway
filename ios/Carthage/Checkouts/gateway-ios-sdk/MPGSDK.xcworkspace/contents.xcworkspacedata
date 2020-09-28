@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workspace
+   version = "1.0">
+   <FileRef
+      location = "group:LICENSE">
+   </FileRef>
+   <FileRef
+      location = "group:README.md">
+   </FileRef>
+   <FileRef
+      location = "group:CHANGES.md">
+   </FileRef>
+   <FileRef
+      location = "group:MPGSDK.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:GatewaySample.playground">
+   </FileRef>
+   <FileRef
+      location = "group:MPGSDK-iOS-Sample/MPGSDK-iOS-Sample.xcodeproj">
+   </FileRef>
+</Workspace>

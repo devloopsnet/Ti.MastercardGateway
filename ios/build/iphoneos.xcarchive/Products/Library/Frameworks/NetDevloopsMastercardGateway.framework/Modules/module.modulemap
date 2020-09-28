@@ -1,0 +1,11 @@
+framework module NetDevloopsMastercardGateway {
+  umbrella header "NetDevloopsMastercardGateway.h"
+
+  export *
+  module * { export * }
+}
+
+module NetDevloopsMastercardGateway.Swift {
+    header "NetDevloopsMastercardGateway-Swift.h"
+    requires objc
+}

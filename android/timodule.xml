@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ti:module xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ti="http://ti.appcelerator.org">
+    <android>
+        <manifest>
+            <application android:allowBackup="true" android:supportsRtl="true">
+                <!-- Enables the Google Pay API -->
+                <meta-data android:name="com.google.android.gms.wallet.api.enabled"
+                    android:value="true" />
+                <activity android:name=".TiMastercardGateway3DSecureActivity"
+                    android:screenOrientation="portrait" />
+            </application>
+        </manifest>
+    </android>
+</ti:module>

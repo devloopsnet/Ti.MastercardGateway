@@ -1,0 +1,51 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml:2:1-8:20
+INJECTED from /Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml:2:1-8:20
+INJECTED from /Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml:2:1-8:20
+INJECTED from /Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml:2:1-8:20
+INJECTED from /Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml:2:1-8:20
+	package
+		ADDED from /Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml:2:117-158
+		INJECTED from /Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml
+		INJECTED from /Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml
+		ADDED from /Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml:2:1-8:20
+		INJECTED from /Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml:2:70-116
+	xmlns:android
+		ADDED from /Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml:2:11-69
+application
+ADDED from /Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml:3:13-7:27
+	android:supportsRtl
+		ADDED from /Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml:3:53-79
+	android:allowBackup
+		ADDED from /Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml:3:26-52
+meta-data#com.google.android.gms.wallet.api.enabled
+ADDED from /Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml:5:17-107
+	android:value
+		ADDED from /Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml:5:85-105
+	android:name
+		ADDED from /Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml:5:28-84
+activity#net.devloops.mastercard.gateway.TiMastercardGateway3DSecureActivity
+ADDED from /Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml:6:17-117
+	android:screenOrientation
+		ADDED from /Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml:6:79-115
+	android:name
+		ADDED from /Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml:6:27-78
+uses-sdk
+INJECTED from /Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml
+INJECTED from /Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml
+INJECTED from /Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml
+INJECTED from /Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml
+		ADDED from /Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml
+		INJECTED from /Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml
+		ADDED from /Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml
+		INJECTED from /Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/module/src/main/AndroidManifest.xml

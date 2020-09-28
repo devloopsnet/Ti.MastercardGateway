@@ -1,0 +1,8 @@
+R_DEF: Internal format may change without notice
+local
+id toolbar
+id webview
+layout activity_3dsecure
+string gateway_3d_secure_authentication
+string gateway_error_missing_3d_secure_id
+string gateway_error_missing_summary_status

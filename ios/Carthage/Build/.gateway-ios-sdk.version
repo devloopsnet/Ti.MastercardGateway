@@ -1,0 +1,20 @@
+{
+  "Mac" : [
+
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "commitish" : "1.1.5",
+  "iOS" : [
+    {
+      "hash" : "a9236ebf6fb0a440318ac9863efd6c47b81ee7ce20667bc08574dddcc9ef9712",
+      "name" : "MPGSDK",
+      "linking" : "dynamic",
+      "swiftToolchainVersion" : "5.3 (swiftlang-1200.0.29.2 clang-1200.0.30.1)"
+    }
+  ]
+}

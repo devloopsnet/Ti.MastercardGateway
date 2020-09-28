@@ -1,0 +1,4 @@
+framework module MPGSDK {
+  header "MPGSDK-Swift.h"
+  requires objc
+}
