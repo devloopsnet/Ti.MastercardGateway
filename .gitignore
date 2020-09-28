@@ -1,2 +1,5 @@
 ./ios/build
 ./android/build
+
+./ios/build/*
+./android/build/*
