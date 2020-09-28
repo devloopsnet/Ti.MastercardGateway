@@ -144,7 +144,7 @@ class NetDevloopsMastercardGatewayModule: TiModule {
         
         self.apiVersion = Int(apiVersion ?? "0")
         
-        request[at: "sourceOfFunds.provided.card.devicePayment.paymentToken"] = params["paymentToken"] as? String
+        request[at: "sourceOfFunds.token"] = params["token"] as? String
         
         gateway!.updateSession(sessionId!, apiVersion: apiVersion!, payload: request) { (result) in
             switch result {
@@ -156,7 +156,7 @@ class NetDevloopsMastercardGatewayModule: TiModule {
                         "params":[
                             "sessionId":params["sessionId"] as? String,
                             "apiVersion":params["apiVersion"] as? String,
-                            "paymentToken":params["paymentToken"] as? String,
+                            "token":params["token"] as? String,
                         ]
                     ]
                 ], thisObject: self)
@@ -168,7 +168,7 @@ class NetDevloopsMastercardGatewayModule: TiModule {
                         "params":[
                             "sessionId":params["sessionId"] as? String,
                             "apiVersion":params["apiVersion"] as? String,
-                            "paymentToken":params["paymentToken"] as? String,
+                            "token":params["token"] as? String,
                         ]
                     ]
                 ], thisObject: self)
@@ -210,6 +210,7 @@ class NetDevloopsMastercardGatewayModule: TiModule {
                 self.fireEvent("3ds_error",with: [
                     "error":"3DS Authentication Failed",
                     "error_description":error.localizedDescription,
+                    "apiVersion":self.apiVersion!
                 ])
             case .completed(gatewayResult: let response):
                 // check for version 46 and earlier api authentication failures and then version 47+ failures
@@ -217,22 +218,26 @@ class NetDevloopsMastercardGatewayModule: TiModule {
                     self.fireEvent("threeds_error",with: [
                         "error":"3DS Authentication Failed",
                         "status":"AUTHENTICATION_FAILED",
-                        "response":response.dictionary
+                        "response":response.dictionary,
+                        "apiVersion":self.apiVersion!
                     ])
                 } else if let status = response[at: "response.gatewayRecommendation"] as? String, status == "DO_NOT_PROCEED"  {
                     self.fireEvent("threeds_error",with: [
                         "error":"3DS Authentication Failed",
                         "status":"DO_NOT_PROCEED",
-                        "response":response.dictionary
+                        "response":response.dictionary,
+                        "apiVersion":self.apiVersion!
                     ])
                 } else {
                     self.fireEvent("threeds_success", with:[
-                        "response":response.dictionary
+                        "response":response.dictionary,
+                        "apiVersion":self.apiVersion!
                     ])
                 }
             default:
                 self.fireEvent("threeds_error",with: [
-                    "error":"3DS Authentication Cancelled"
+                    "error":"3DS Authentication Cancelled",
+                    "apiVersion":self.apiVersion!
                 ])
             }
         })

@@ -122,7 +122,7 @@ public class TiMastercardGatewayModule extends KrollModule implements TiActivity
         String sessionId = (String) cardDetails.get("sessionId");
         String apiVersion = (String) cardDetails.get("apiVersion");
         GatewayMap request = new GatewayMap()
-                .set("sourceOfFunds.provided.card.devicePayment.paymentToken", (String) cardDetails.get("paymentToken"));
+                .set("sourceOfFunds.token", (String) cardDetails.get("token"));
         this.apiVersion = Integer.parseInt(apiVersion);
         gateway.updateSession(sessionId, apiVersion, request, new GatewayCallback() {
             @Override
