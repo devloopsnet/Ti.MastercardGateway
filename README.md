@@ -1,71 +1,36 @@
 # Appcelerator Titanium Mobile Ti.MastercardGateway
 
-This is a skeleton Titanium Mobile Mobile module project.
+[![gitTio](http://gitt.io/badge.svg)](http://gitt.io/component/ti.mastercard) [![Abdullah Al-Faqeir](https://img.shields.io/badge/maintainer-Abdullah_Al_Faqeir-yellow.svg?style=flat-square)](https://github.com/abdullahfaqeir)
 
-## Module Naming
+A proxy for Mastercard-Gateway iOS and Android sdk.
 
-Choose a unique module id for your module.  This ID usually follows a namespace
-convention using DNS notation.  For example, com.appcelerator.module.test.  This
-ID can only be used once by all public modules in Titanium.
 
-## Getting Started
+## Quick Start
 
-1. Edit the `manifest` with the appropriate details about your module.
-2. Edit the `LICENSE` to add your license details.
-3. Place any assets (such as PNG files) that are required anywhere in the module folder.
-4. Edit the `timodule.xml` and configure desired settings.
-5. Code and build.
+### Get it [![gitTio](http://gitt.io/badge.png)](http://gitt.io/component/ti.mastercard)
+Download this repository and consult the [Alloy Documentation](http://docs.appcelerator.com/titanium/latest/#!/guide/Alloy_XML_Markup-section-35621528_AlloyXMLMarkup-ImportingWidgets) on how to install it, or simply use the [gitTio CLI](http://gitt.io/cli):
 
-## Documentation
------------------------------
+`$ gittio install ti.mastercard`
 
-You should provide at least minimal documentation for your module in `documentation` folder using the Markdown syntax.
-
-For more information on the Markdown syntax, refer to this documentation at:
-
-<http://daringfireball.net/projects/markdown/>
 
 ## Example
 
-The `example` directory contains a skeleton application test harness that can be
-used for testing and providing an example of usage to the users of your module.
+The `example` directory contains code snippets on how to use the module.
 
 ## Building
 
 Simply run `appc run -p [ios|android] --build-only` which will compile and package your module.
-
-## Linting
-
-You can use `clang` to lint your code. A default Axway linting style is included inside the module main folder.
-Run `clang-format -style=file -i SRC_FILE` in the module root to lint the `SRC_FILE`. You can also patterns,
-like `clang-format -style=file -i Classes/*` 
-
-## Install
-
-To use your module locally inside an app you can copy the zip file into the app root folder and compile your app.
-The file will automatically be extracted and copied into the correct `modules/` folder.
-
-If you want to use your module globally in all your apps you have to do the following:
-
-### macOS
-
-Copy the distribution zip file into the `~/Library/Application Support/Titanium` folder
-
-### Linux
-
-Copy the distribution zip file into the `~/.titanium` folder
-
-### Windows
-Copy the distribution zip file into the `C:\ProgramData\Titanium` folder
 
 ## Project Usage
 
 Register your module with your application by editing `tiapp.xml` and adding your module.
 Example:
 
+```xml
 <modules>
   <module version="1.0.0">net.devloops.mastercard.gateway</module>
 </modules>
+```
 
 When you run your project, the compiler will combine your module along with its dependencies
 and assets into the application.
@@ -77,31 +42,109 @@ To use your module in code, you will need to require it.
 ### ES6+ (recommended)
 
 ```js
-import MyModule from 'net.devloops.mastercard.gateway';
-MyModule.foo();
+import Mastercard from 'net.devloops.mastercard.gateway';
+Mastercard.updateSession('{sessionId}','{apiVersion}',{});
 ```
 
 ### ES5
 
 ```js
-var MyModule = require('net.devloops.mastercard.gateway');
-MyModule.foo();
+var Mastercard = require('net.devloops.mastercard.gateway');
+Mastercard.updateSession('{sessionId}','{apiVersion}',{})
 ```
 
-## Testing
+### Examples
 
-To test your module with the example, use:
-
-```js
-appc run -p [ios|android]
+- Update Session with Card
+ ```javascript
+ //Please reference mastercard api documentation for other params names.
+  let data = {    
+    'sourceOfFunds.provided.card.nameOnCard': card.name,
+    'sourceOfFunds.provided.card.number': card.number,
+    'sourceOfFunds.provided.card.securityCode': card.cvv,
+    'sourceOfFunds.provided.card.expiry.month': card.expiry.month,
+    'sourceOfFunds.provided.card.expiry.year': card.expiry.year,
+  };
+  MasterCard.updateSessionWithCard(SessionId, ApiVersion, data res => {
+    callback(res.success, SessionId, res);
+  });
 ```
 
-This will execute the app.js in the example/ folder as a Titanium application.
+- Update Session with Card
+ ```javascript
+  let data = {
+    'sessionId': SessionId,
+    'apiVersion': ApiVersion,
+    'nameOnCard': card.name,
+    'number': card.number,
+    'securityCode': card.cvv,
+    'expiryMonth': card.expiry.month,
+    'expiryYear': card.expiry.year,
+  };
+  MasterCard.updateSessionWithCard(data, res => {
+    callback(res.success, SessionId, res);
+  });
+```
 
-## Distribution
+- Update Session with Token
+ ```javascript
+  let data = {
+    'sessionId': SessionId,
+    'apiVersion': ApiVersion,
+    'token': '{token}',    
+  };
+  MasterCard.updateSessionWithToken(data, res => {
+    callback(res.success, SessionId, res);
+  });
+```
 
-You have a variety of choises for distributing your module
-- [Gitt.io](http://gitt.io/)
-- [Axway Marketplace](https://marketplace.axway.com/home)
+- Start 3DSecure process
+ ```javascript
+ MasterCard.start3DSecure({
+    'html': '{html string}'
+  });
+ ```
 
-Code strong!
+
+## Events
+
+| Name  | Usage |
+| ---------  | ----------- |
+| threeds_success     | When 3DSecure process is successful. |
+| threeds_error       | When 3DSecure process fails. |
+
+
+## Methods
+You can also manually trigger the show, hide and expand event of the widget.
+
+| Function   | Parameters | Usage |
+| ---------- | ---------- | ----- |
+| updateSession           | `string`, `string`, `object`, `callack`   | To update session the same way the native sdk works |
+| updateSessionWithCard   | `object`, `callback`   | To hide the buttom sheet view |
+| updateSessionWithToken  | `object`, `callback`      | To expand the ContentBox to fit the view 100% |
+| start3DSecure           | `object`  | To set the child views of the ContentBox |
+
+
+
+## Changelog
+* 1.0: Initial version
+
+
+## License
+
+<pre>
+Copyright 2020 Devloops LLC
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+   http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+</pre>
+

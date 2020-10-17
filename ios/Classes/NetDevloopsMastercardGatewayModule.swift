@@ -62,18 +62,94 @@ class NetDevloopsMastercardGatewayModule: TiModule {
         return "OK"
     }
     
-    @objc(updateSessionWithCard:)
-    func updateSessionWithCard(arguments: Array<Any>?){
+    @objc(updateSession:)
+    func updateSession(arguments: Array<Any>?){
+        guard
+            let arguments = arguments,
+            let sessionId = arguments[0] as? String,
+            let apiVersion = arguments[1] as? String,
+            let params = arguments[2] as? [String: Any],
+            let callback = arguments[3] as? KrollCallback
+        else {
+            fatalError("Invalid parameters sents")
+        }
+        
         if(gateway==nil){
             debugPrint("You must call initialize() methods before calling updateSession()")
+            callback.call([
+                [
+                    "success":false,
+                    "error":"You must call initialize() methods before calling updateSession()",
+                    "params":[
+                        "sessionId":params["sessionId"] as? String,
+                        "apiVersion":params["apiVersion"] as? String,
+                        "nameOnCard":params["nameOnCard"] as? String,
+                        "number":params["number"] as? String,
+                        "securityCode":params["securityCode"] as? String,
+                        "expiryMonth":params["expiryMonth"] as? String,
+                        "expiryYear":params["expiryYear"] as? String,
+                    ]
+                ]
+            ], thisObject: self)
             return;
         }
+        var request = GatewayMap()
+        for key:String in params.keys{
+            request[at: key] = params[key]
+        }
+        gateway!.updateSession(sessionId, apiVersion: apiVersion, payload: request) { (result) in
+            switch result {
+            case .success(let response):
+                callback.call([
+                    [
+                        "success":true,
+                        "response":response.dictionary,
+                        "sessionId":sessionId,
+                        "apiVersion":apiVersion,
+                        "params":params
+                    ]
+                ], thisObject: self)
+            case .error(let error):
+                callback.call([
+                    [
+                        "success":false,
+                        "error":error.localizedDescription,
+                        "sessionId":sessionId,
+                        "apiVersion":apiVersion,
+                        "params":params
+                    ]
+                ], thisObject: self)
+            }
+        }
+    }
+    
+    @objc(updateSessionWithCard:)
+    func updateSessionWithCard(arguments: Array<Any>?){
         guard
             let arguments = arguments,
             let params = arguments[0] as? [String: Any],
             let callback = arguments[1] as? KrollCallback
         else {
             fatalError("Invalid parameters sents")
+        }
+        if(gateway==nil){
+            debugPrint("You must call initialize() methods before calling updateSession()")
+            callback.call([
+                [
+                    "success":false,
+                    "error":"You must call initialize() methods before calling updateSession()",
+                    "params":[
+                        "sessionId":params["sessionId"] as? String,
+                        "apiVersion":params["apiVersion"] as? String,
+                        "nameOnCard":params["nameOnCard"] as? String,
+                        "number":params["number"] as? String,
+                        "securityCode":params["securityCode"] as? String,
+                        "expiryMonth":params["expiryMonth"] as? String,
+                        "expiryYear":params["expiryYear"] as? String,
+                    ]
+                ]
+            ], thisObject: self)
+            return;
         }
         var request = GatewayMap()
         let sessionId:String? = params["sessionId"] as? String
@@ -93,7 +169,7 @@ class NetDevloopsMastercardGatewayModule: TiModule {
                 callback.call([
                     [
                         "success":true,
-                        "response":response.description,
+                        "response":response.dictionary,
                         "params":[
                             "sessionId":params["sessionId"] as? String,
                             "apiVersion":params["apiVersion"] as? String,
@@ -109,7 +185,7 @@ class NetDevloopsMastercardGatewayModule: TiModule {
                 callback.call([
                     [
                         "success":false,
-                        "response":error.localizedDescription,
+                        "error":error.localizedDescription,
                         "params":[
                             "sessionId":params["sessionId"] as? String,
                             "apiVersion":params["apiVersion"] as? String,
@@ -127,16 +203,27 @@ class NetDevloopsMastercardGatewayModule: TiModule {
     
     @objc(updateSessionWithToken:)
     func updateSessionWithToken(arguments: Array<Any>?){
-        if(gateway==nil){
-            debugPrint("You must call initialize() methods before calling updateSession()")
-            return;
-        }
         guard
             let arguments = arguments,
             let params = arguments[0] as? [String: Any],
             let callback = arguments[1] as? KrollCallback
         else {
             fatalError("Invalid parameters sents")
+        }
+        if(gateway==nil){
+            debugPrint("You must call initialize() methods before calling updateSession()")
+            callback.call([
+                [
+                    "success":false,
+                    "error":"You must call initialize() methods before calling updateSession()",
+                    "params":[
+                        "sessionId":params["sessionId"] as? String,
+                        "apiVersion":params["apiVersion"] as? String,
+                        "token":params["token"] as? String,
+                    ]
+                ]
+            ], thisObject: self)
+            return;
         }
         var request = GatewayMap()
         let sessionId:String? = params["sessionId"] as? String
@@ -164,7 +251,7 @@ class NetDevloopsMastercardGatewayModule: TiModule {
                 callback.call([
                     [
                         "success":false,
-                        "response":error,
+                        "error":error.localizedDescription,
                         "params":[
                             "sessionId":params["sessionId"] as? String,
                             "apiVersion":params["apiVersion"] as? String,
@@ -200,8 +287,6 @@ class NetDevloopsMastercardGatewayModule: TiModule {
         let html:String? = params["html"] as? String
         threeDSecureView.authenticatePayer(htmlBodyContent: html!, handler: handle3DS(authView:result:))
     }
-    
-    
     
     func handle3DS(authView: Gateway3DSecureViewController, result: Gateway3DSecureResult) {
         authView.dismiss(animated: true, completion: { [self] in

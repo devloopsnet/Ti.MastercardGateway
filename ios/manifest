@@ -16,4 +16,4 @@ name: Ti.MastercardGateway
 moduleid: net.devloops.mastercard.gateway
 guid: 1f0eb513-9895-47de-bdaa-7ff85d44098a
 platform: iphone
-minsdk: 8.2.1.GA
+minsdk: 9.0.0.GA

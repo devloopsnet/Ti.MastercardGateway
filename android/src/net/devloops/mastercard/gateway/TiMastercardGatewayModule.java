@@ -24,6 +24,9 @@ import org.appcelerator.titanium.TiApplication;
 import org.appcelerator.titanium.util.TiActivityResultHandler;
 import org.appcelerator.titanium.util.TiActivitySupport;
 
+import java.util.Iterator;
+import java.util.Map;
+
 /**
  * @author Abdullah Al-Faqeir <abdullah@devloops.net>
  * @company Devloops LLC
@@ -76,6 +79,41 @@ public class TiMastercardGatewayModule extends KrollModule implements TiActivity
         gateway.setMerchantId(merchantId);
         gateway.setRegion(region);
         return "OK";
+    }
+
+    @Kroll.method(runOnUiThread = true)
+    public void updateSession(@Kroll.argument String sessionId, @Kroll.argument String apiVersion, @Kroll.argument KrollDict params, final KrollFunction callback) {
+        if (gateway == null) {
+            System.out.println("You must call initialize() methods before calling updateSession()");
+            return;
+        }
+        this.apiVersion = Integer.parseInt(apiVersion);
+        GatewayMap request = new GatewayMap();
+
+        Iterator<Map.Entry<String, Object>> it = params.entrySet().iterator();
+        while (it.hasNext()) {
+            Map.Entry<String, Object> pair = it.next();
+            request.set(pair.getKey(), pair.getValue());
+            it.remove(); // avoids a ConcurrentModificationException
+        }
+
+        gateway.updateSession(sessionId, apiVersion, request, new GatewayCallback() {
+            @Override
+            public void onSuccess(GatewayMap response) {
+                KrollDict dict = new KrollDict();
+                dict.put("success", true);
+                dict.put("response", response);
+                callback.callAsync(getKrollObject(), dict);
+            }
+
+            @Override
+            public void onError(Throwable throwable) {
+                KrollDict dict = new KrollDict();
+                dict.put("success", false);
+                dict.put("response", throwable.getMessage());
+                callback.callAsync(getKrollObject(), dict);
+            }
+        });
     }
 
     @Kroll.method(runOnUiThread = true)

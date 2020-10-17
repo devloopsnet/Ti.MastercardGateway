@@ -1,3 +1,5 @@
+"/Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/src/net/devloops/mastercard/gateway/RHelper.java"
+"/Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/src/net/devloops/mastercard/gateway/TiMastercardGateway3DSecureActivity.java"
 "/Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/src/net/devloops/mastercard/gateway/TiMastercardGatewayModule.java"
 "/Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/generated/r/android/support/compat/R.java"
 "/Users/AbdullahFaqeir/Downloads/Nafe3/Projects/Module/Ti.MastercardGateway/android/build/generated/r/android/support/coreui/R.java"
