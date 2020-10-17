@@ -115,14 +115,13 @@ Mastercard.updateSession('{sessionId}','{apiVersion}',{})
 
 
 ## Methods
-You can also manually trigger the show, hide and expand event of the widget.
 
 | Function   | Parameters | Usage |
 | ---------- | ---------- | ----- |
 | updateSession           | `string`, `string`, `object`, `callack`   | To update session the same way the native sdk works |
-| updateSessionWithCard   | `object`, `callback`   | To hide the buttom sheet view |
-| updateSessionWithToken  | `object`, `callback`      | To expand the ContentBox to fit the view 100% |
-| start3DSecure           | `object`  | To set the child views of the ContentBox |
+| updateSessionWithCard   | `object`, `callback`   | To update session with the card details in a simple way |
+| updateSessionWithToken  | `object`, `callback`      | To update session with a card token in a simple way  |
+| start3DSecure           | `object`  | To start 3DSecure process |
 
 
 
