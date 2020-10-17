@@ -1,16 +1,16 @@
 # Appcelerator Titanium Mobile Ti.MastercardGateway
 
-[![gitTio](http://gitt.io/badge.svg)](http://gitt.io/component/ti.mastercard) [![Abdullah Al-Faqeir](https://img.shields.io/badge/maintainer-Abdullah_Al_Faqeir-yellow.svg?style=flat-square)](https://github.com/abdullahfaqeir)
+[![gitTio](http://gitt.io/badge.svg)](http://gitt.io/component/net.devloops.mastercard.gateway) [![Abdullah Al-Faqeir](https://img.shields.io/badge/maintainer-Abdullah_Al_Faqeir-yellow.svg?style=flat-square)](https://github.com/abdullahfaqeir)
 
 A proxy for Mastercard-Gateway iOS and Android sdk.
 
 
 ## Quick Start
 
-### Get it [![gitTio](http://gitt.io/badge.png)](http://gitt.io/component/ti.mastercard)
+### Get it [![gitTio](http://gitt.io/badge.png)](http://gitt.io/component/net.devloops.mastercard.gateway)
 Download this repository and consult the [Alloy Documentation](http://docs.appcelerator.com/titanium/latest/#!/guide/Alloy_XML_Markup-section-35621528_AlloyXMLMarkup-ImportingWidgets) on how to install it, or simply use the [gitTio CLI](http://gitt.io/cli):
 
-`$ gittio install ti.mastercard`
+`$ gittio install net.devloops.mastercard.gateway`
 
 
 ## Example
